@@ -1,0 +1,241 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #222;
+  background-color: #F17F42; }
+  @media only screen and (max-width: 36.5em) {
+    body {
+      font-size: 1rem; } }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.container {
+  display: grid;
+  /* grid-template-columns: 1fr min-content;
+    grid-template-rows: 200px min-content 200px; */
+  grid-template-columns: 1fr;
+  grid-template-rows: [AIStart] min-content [AIEnd groundS] minmax(40vh, max-content) [groundE playerS] min-content [playerE remainS] min-content [remainE]; }
+
+.btn {
+  background-color: #CE6D39;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 1.5rem 3.2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer; }
+  @media only screen and (max-width: 36.5em) {
+    .btn {
+      padding: 1rem 2.5rem; } }
+  @media only screen and (max-width: 30.3em) {
+    .btn {
+      font-size: .8rem;
+      padding: 1rem; } }
+
+.score {
+  display: flex;
+  justify-content: space-around;
+  width: 50%; }
+  @media only screen and (max-width: 36.5em) {
+    .score {
+      font-size: 1.3rem; } }
+
+.AICards {
+  display: flex;
+  grid-row: AIStart / AIEnd;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center; }
+
+.playGround {
+  grid-row: groundS / groundE;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(14, min-content);
+  grid-template-rows: repeat(2, min-content);
+  align-items: center; }
+  @media only screen and (max-width: 65em) {
+    .playGround {
+      grid-template-columns: repeat(12, min-content);
+      grid-template-rows: repeat(3, min-content); } }
+  @media only screen and (max-width: 47.5em) {
+    .playGround {
+      grid-template-columns: repeat(9, min-content);
+      grid-template-rows: repeat(3, min-content); } }
+  @media only screen and (max-width: 36.5em) {
+    .playGround {
+      grid-template-columns: repeat(8, min-content);
+      grid-template-rows: repeat(4, min-content); } }
+  @media only screen and (max-width: 30.3em) {
+    .playGround {
+      grid-template-columns: repeat(6, min-content);
+      grid-template-rows: repeat(5, min-content); } }
+
+.cont {
+  display: flex;
+  grid-row: playerS / playerE;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center; }
+
+.remain {
+  grid-row: remainS / remainE;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center; }
+
+.dot {
+  width: .5rem;
+  height: .5rem;
+  margin: .5rem;
+  background-color: #555;
+  border-radius: 50%; }
+  @media only screen and (max-width: 36.5em) {
+    .dot {
+      width: .4rem;
+      height: .4rem;
+      margin: .4rem; } }
+  .dot__small {
+    width: .4rem;
+    height: .4rem;
+    margin: .4rem;
+    background-color: #555;
+    border-radius: 50%; }
+    @media only screen and (max-width: 62.5em) {
+      .dot__small {
+        margin: .3rem; } }
+    @media only screen and (max-width: 41.2em) {
+      .dot__small {
+        width: .3rem;
+        height: .3rem;
+        margin: .2rem; } }
+
+.Hdomino {
+  display: inline-flex;
+  width: 10rem;
+  height: 3.5rem;
+  padding: .5rem 0px;
+  margin: .5rem .2rem;
+  border: 1px solid #555;
+  border-radius: .8rem;
+  background-color: white;
+  cursor: pointer; }
+  @media only screen and (max-width: 36.5em) {
+    .Hdomino {
+      border-radius: .6rem; } }
+  @media only screen and (max-width: 36.5em) {
+    .Hdomino {
+      width: 8rem;
+      height: 3rem;
+      padding: .4rem 0px;
+      margin: .4rem .1rem; } }
+  .Hdomino__small {
+    width: 8rem;
+    height: 3rem;
+    padding: .2rem 0px;
+    margin: .3rem .1rem; }
+    @media only screen and (max-width: 62.5em) {
+      .Hdomino__small {
+        width: 7rem;
+        height: 2.5rem; } }
+    @media only screen and (max-width: 41.2em) {
+      .Hdomino__small {
+        border-radius: .6rem;
+        width: 6rem;
+        height: 2rem; } }
+  .Hdomino__remain {
+    width: 3rem;
+    height: 1rem;
+    border-radius: .3rem; }
+    @media only screen and (max-width: 41.2em) {
+      .Hdomino__remain {
+        width: 1.5rem; } }
+  .Hdomino__left {
+    border-right: 0.1rem solid #555;
+    width: 50%;
+    display: grid;
+    grid-template-columns: min-content min-content min-content;
+    grid-template-rows: min-content min-content min-content;
+    justify-content: center;
+    align-items: center;
+    align-content: center; }
+  .Hdomino__right {
+    border-left: 0.1rem solid #555;
+    width: 50%;
+    display: grid;
+    grid-template-columns: min-content min-content min-content;
+    grid-template-rows: min-content min-content min-content;
+    justify-content: center;
+    align-items: center;
+    align-content: center; }
+
+.Vdomino {
+  height: 9rem;
+  width: 3.5rem;
+  padding: 0 .5rem;
+  margin: .2rem .5rem;
+  border: 1px solid #555;
+  border-radius: .8rem;
+  background-color: white;
+  cursor: pointer; }
+  @media only screen and (max-width: 36.5em) {
+    .Vdomino {
+      height: 7rem;
+      width: 3rem;
+      padding: 0 .4rem;
+      margin: .1rem .4rem; } }
+  @media only screen and (max-width: 36.5em) {
+    .Vdomino {
+      border-radius: .6rem; } }
+  .Vdomino__small {
+    height: 8rem;
+    width: 3rem;
+    padding: 0 .2rem;
+    margin: .1rem .3rem; }
+    @media only screen and (max-width: 62.5em) {
+      .Vdomino__small {
+        height: 7rem;
+        width: 2.5rem; } }
+    @media only screen and (max-width: 41.2em) {
+      .Vdomino__small {
+        border-radius: .6rem;
+        height: 5.8rem;
+        width: 2rem; } }
+  .Vdomino__left {
+    border-bottom: 0.1rem solid #555;
+    height: 50%;
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    grid-template-columns: min-content min-content;
+    justify-content: center;
+    align-items: center;
+    align-content: center; }
+  .Vdomino__right {
+    border-top: 0.1rem solid #555;
+    height: 50%;
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    grid-template-columns: min-content min-content;
+    justify-content: center;
+    align-items: center;
+    align-content: center; }
